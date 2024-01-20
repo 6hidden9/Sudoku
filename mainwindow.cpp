@@ -64,3 +64,25 @@ void MainWindow::on_pushButton_clicked()
     }
 }
 
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QTableWidgetItem *item;
+    for (int i =0 ; i <= 10;i++){
+int y = QRandomGenerator::global()->bounded(1, 10);
+int x = QRandomGenerator::global()->bounded(1, 10);
+int n = QRandomGenerator::global()->bounded(1, 10);
+if ( checker( x, y, n))
+    table[x][y]=n;
+    }
+    for (int i =0;i<9;i++)
+    {for (int j =0 ; j<9;j++)
+        {
+            // ui->Table->item(i,j)->setData(Qt::DisplayRole,QVariant(table[i][j]));
+            item = new QTableWidgetItem(QString::number(table[i][j]));
+            item->setData(Qt::DisplayRole,QVariant(table[i][j]));
+            ui->Table->setItem(i,j,item);
+        }
+    }
+}
+

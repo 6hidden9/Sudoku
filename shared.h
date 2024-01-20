@@ -4,5 +4,6 @@
 extern int p,o,count;
 extern int table[9][9];
 void start();
+bool checker( int satr, int sotoon, int nom);
 
 #endif // SHARED_H
